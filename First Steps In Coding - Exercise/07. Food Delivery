@@ -1,0 +1,28 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Repainting
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            double pil = 10.35;
+            double msr = 12.40;
+            double vgm = 8.15;
+            double pill = double.Parse(Console.ReadLine());
+            double msrr= double.Parse(Console.ReadLine());
+            double vgmm= double.Parse(Console.ReadLine());
+            double pileshko = pil * pill;
+            double menu = msr * msrr;
+            double vegitar = vgm * vgmm;
+            double nepulnasmetka = pileshko + menu + vegitar;
+            double desert = nepulnasmetka * 0.20;
+            double cqlasmetka = nepulnasmetka + desert + 2.50;
+            Console.WriteLine(cqlasmetka);
+        }
+    }
+}

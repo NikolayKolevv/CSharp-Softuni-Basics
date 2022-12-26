@@ -1,0 +1,44 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace domashno
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+
+            double budjet = double.Parse(Console.ReadLine());
+            int broiVideokarti = int.Parse(Console.ReadLine());
+            int broiProcesori = int.Parse(Console.ReadLine());
+            int broiRam = int.Parse(Console.ReadLine());
+
+            double videokarta = broiVideokarti * 250;
+            double a = videokarta * 0.35;
+            double procesor = a * broiProcesori;
+            double b = videokarta * 0.1;
+            double ram = broiRam * b;
+            double sum = videokarta + procesor + ram;
+
+            if (broiVideokarti>broiProcesori)
+            {
+                sum = sum - (sum * 0.15);
+            }
+            double ostatuk = budjet - sum;
+            double need = sum - budjet;
+            if (budjet>=sum)
+            {
+                Console.WriteLine($"You have {ostatuk:f2} leva left!");
+            }
+            else
+            {
+                Console.WriteLine($"Not enough money! You need {need:f2} leva more!");
+            }
+
+            
+        }
+    }
+}

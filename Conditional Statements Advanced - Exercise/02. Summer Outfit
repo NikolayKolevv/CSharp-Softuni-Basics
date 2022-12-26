@@ -1,0 +1,80 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace domashno
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int degrees = int.Parse(Console.ReadLine());
+            string vreme = Console.ReadLine();
+            string outfit = "";
+            string shoes = "";
+
+            if (degrees <= 18 && degrees >= 10)
+            {
+                switch (vreme)
+                {
+                    case "Morning":
+                        outfit = "Sweatshirt";
+                        shoes = "Sneakers";
+                        break;
+                    case "Afternoon":
+                    case "Evening":
+                        outfit = "Shirt";
+                        shoes = "Moccasins";
+                        break;
+                    default:
+                        break;
+                }
+            }
+            if (degrees <= 24 && degrees > 18)
+            {
+                switch (vreme)
+                {
+                    case "Afternoon":
+                        outfit = "T-Shirt";
+                        shoes = "Sandals";
+                        break;
+                    case "Morning":
+                    case "Evening":
+                        outfit = "Shirt";
+                        shoes = "Moccasins";
+                        break;
+                    default:
+                        break;
+                }
+            }
+            if (degrees>=25)
+            {
+                switch (vreme)
+                {
+
+                    case "Morning":
+                        outfit = "T-Shirt";
+                        shoes = "Sandals";
+                        break;
+                    case "Afternoon":
+                        outfit = "Swim Suit";
+                        shoes = "Barefoot";
+                            break;
+                    case "Evening":
+                        outfit = "Shirt";
+                        shoes = "Moccasins";
+                        break;
+                    default:
+                        break;
+                }
+            }
+            Console.WriteLine($"It's {degrees} degrees, get your {outfit} and {shoes}.");
+        }
+    }
+}
+            
+
+
+

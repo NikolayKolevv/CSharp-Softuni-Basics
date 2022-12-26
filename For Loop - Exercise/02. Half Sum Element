@@ -1,0 +1,41 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Lekciq
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int readCount = int.Parse(Console.ReadLine());
+            int sum = 0, maxNumber = int.MinValue;
+
+            for (int i = 0; i < readCount; i++)
+            {
+                int number = int.Parse(Console.ReadLine());
+                sum += number;
+
+                if (number>maxNumber)
+                {
+                    maxNumber = number;
+                }
+                
+            }
+            int sumWithout = sum - maxNumber;
+            if (sumWithout==maxNumber)
+            {
+                Console.WriteLine("Yes");
+                Console.WriteLine($"Sum = {maxNumber}");
+            }
+            else
+            {
+                int diffrence = Math.Abs(sumWithout - maxNumber);
+                Console.WriteLine("No");
+                Console.WriteLine($"Diff = {diffrence}");
+            }
+        }
+    }
+}

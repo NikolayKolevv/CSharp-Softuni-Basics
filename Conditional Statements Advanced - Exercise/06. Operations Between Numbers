@@ -1,0 +1,76 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace domashno
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            double num1 = double.Parse(Console.ReadLine());
+            double num2 = double.Parse(Console.ReadLine());
+            string symbol=Console.ReadLine();
+            double sum = 0;
+            string oddOrEven = "";
+            switch (symbol)
+            {
+                case "+":                   
+                case "-":                    
+                case "*":
+                    switch (symbol)
+                    {
+                        case "+":
+                            sum = num1 + num2; break;
+                        case "-":
+                            sum = num1 - num2; break;
+                        case "*":
+                            sum = num1 * num2; break;
+                        
+                    }
+                    
+                    if (sum%2==0)
+                    {
+                        oddOrEven = "even";
+                    }
+                    else
+                    {
+                        oddOrEven = "odd";
+                    }
+                    break;
+            }
+            switch (symbol)
+            {
+                case "/": sum = num1 / num2; break;
+            }
+            switch (symbol)
+            {
+                case "%": sum = num1 % num2; break;
+                
+                    
+            }
+            if (symbol=="+"|symbol=="-"||symbol=="*")
+            {
+                Console.WriteLine($"{num1} {symbol} {num2} = {sum} - {oddOrEven}");
+            }
+            else if (num2==0)
+            {
+                Console.WriteLine($"Cannot divide {num1} by zero");
+            }
+            else if (symbol=="/")
+            {
+                Console.WriteLine($"{num1} / {num2} = {sum:f2}");
+            }
+            else if (symbol=="%")
+            {
+                Console.WriteLine($"{num1} {symbol} {num2} = {sum}");
+            }
+
+
+
+
+        }
+    }
+}

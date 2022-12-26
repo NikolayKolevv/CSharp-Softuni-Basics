@@ -1,0 +1,29 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace uprajnenie_2
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int inputHours = int.Parse(Console.ReadLine());
+            int inputMinutes = int.Parse(Console.ReadLine());
+
+            int sumMinutes = (inputHours * 60) + inputMinutes + 15;
+
+            int hours = sumMinutes / 60;
+            int minutes = sumMinutes % 60;
+
+            if (hours >= 24)
+            {
+                hours -= 24;
+            }
+
+            Console.WriteLine($"{hours}:{minutes:d2}");
+        }
+    }
+}

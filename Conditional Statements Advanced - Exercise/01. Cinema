@@ -1,0 +1,40 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace domashno
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            string type = Console.ReadLine();
+            int rows = int.Parse(Console.ReadLine());
+            int colums = int.Parse(Console.ReadLine());
+
+            int totalSeats = rows * colums;
+            double ticketPrice = 0;
+
+            switch (type)
+            {
+                case "Premiere": ticketPrice = 12;
+                    break;
+                case "Normal":ticketPrice = 7.5;
+                    break;
+                case "Discount": ticketPrice = 5;
+                    break;
+                default:
+                    ticketPrice = 5;
+                    break;
+            }
+            double sum = totalSeats * ticketPrice;
+            Console.WriteLine($"{sum:f2} leva");
+        }
+    }
+}
+            
+
+
+

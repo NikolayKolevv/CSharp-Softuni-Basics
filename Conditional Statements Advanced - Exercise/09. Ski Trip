@@ -1,0 +1,70 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace domashno
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int prestoi = int.Parse(Console.ReadLine());
+            var pomeshtenie = Console.ReadLine();
+            string ocenka = Console.ReadLine();
+            int noshtuvki = prestoi - 1;
+            double cenaZaNoshtuvka = 0;
+
+
+            switch (pomeshtenie)
+            {
+                case "room for one person": cenaZaNoshtuvka = 18; break;
+                case "apartment": cenaZaNoshtuvka = 25; break;
+                case "president apartment": cenaZaNoshtuvka = 35; break;
+
+
+                default:
+                    break;
+            }
+            double sum = cenaZaNoshtuvka * noshtuvki;
+
+
+            if ((noshtuvki<10)&&(pomeshtenie== "apartment"))
+            {
+                sum *= 0.7;
+            }
+            else if ((noshtuvki<10)&&(pomeshtenie== "president apartment"))
+            {
+                sum *= 0.9;
+            }
+            else if ((noshtuvki>=10)&&(noshtuvki<15)&&pomeshtenie=="apartment")
+            {
+                sum *= 0.65;
+            }
+            else if ((noshtuvki >= 10) && (noshtuvki <= 15) && (pomeshtenie == "president apartment"))
+            {
+                sum *= 0.85;
+            }
+            else if (noshtuvki>15&&pomeshtenie=="apartment")
+            {
+                sum *= 0.5;
+            }
+            else if (noshtuvki > 15 && pomeshtenie == "president apartment")
+            {
+                sum *= 0.8;
+            }
+
+            if (ocenka=="positive")
+            {
+                sum = sum + (sum * 0.25) ;
+            }
+            else if (ocenka=="negative")
+            {
+                sum =sum-(sum*0.1);
+            }
+
+            Console.WriteLine($"{sum:f2}");
+        }
+    }
+}

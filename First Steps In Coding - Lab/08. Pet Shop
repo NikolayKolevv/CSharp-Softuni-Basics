@@ -1,0 +1,21 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace lekciq_1
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int opkuche = int.Parse(Console.ReadLine());
+            int opkotka = int.Parse(Console.ReadLine());
+            double cenakuche = opkuche * 2.50;
+            double cenakotka = opkotka * 4;
+            double krai = cenakotka + cenakuche;
+            Console.WriteLine($"{krai} lv.");
+        }
+    }
+}

@@ -1,0 +1,42 @@
+using System;
+					
+public class Program
+{
+	public static void Main()
+	{
+		var kyde = Console.ReadLine();
+		var kolko = double.Parse(Console.ReadLine());
+		double procent = 0;
+		double a = 0;
+		
+		if (kyde == "Sofia")
+		{
+		if (kolko >= 0 && kolko <= 500) procent = 0.05;
+		else if (kolko > 500 && kolko <= 1000) procent = 0.07;
+		else if (kolko > 1000 && kolko <= 10000) procent = 0.08;
+		else if ( kolko > 10000) procent = 0.12;
+		}
+		else if (kyde == "Varna")
+		{
+		if (kolko >= 0 && kolko <= 500) procent = 0.045;
+		else if (kolko > 500 && kolko <= 1000) procent = 0.075;
+		else if (kolko > 1000 && kolko <= 10000) procent = 0.1;
+		else if ( kolko > 10000) procent = 0.13;
+		}	
+			else if (kyde == "Plovdiv")
+		{
+		if (kolko >= 0 && kolko <= 500) procent = 0.055;
+		else if (kolko > 500 && kolko <= 1000) procent = 0.08;
+		else if (kolko > 1000 && kolko <= 10000) procent = 0.12;
+		else if ( kolko > 10000) procent = 0.145;
+		}	
+		
+		if (procent == 0) Console.WriteLine("error");
+		else 
+			{
+			a = kolko * procent;
+			Console.WriteLine("{0:f2}", a);
+			}
+		
+	}
+}

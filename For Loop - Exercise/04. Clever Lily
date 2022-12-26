@@ -1,0 +1,43 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Lekciq
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int age = int.Parse(Console.ReadLine());
+            double was = double.Parse(Console.ReadLine());
+            int toy = int.Parse(Console.ReadLine());
+            double sum = 0;
+            int money = 10;
+
+            for (int i = 1; i <= age; i++)
+            {
+                if (i % 2 == 0)
+                {
+                    sum += money;
+                    money += 10;
+                    sum--;
+                }
+                else
+                {
+                    sum += toy;
+                }
+
+            }
+            if (sum<was)
+            {
+                Console.WriteLine($"No! {was-sum:f2}");
+            }
+            else
+            {
+                Console.WriteLine($"Yes! {sum-was:f2}");
+            }
+        }
+    }
+}

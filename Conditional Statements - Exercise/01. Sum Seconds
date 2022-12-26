@@ -1,0 +1,29 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace uprajnenie_2
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int firstime = int.Parse(Console.ReadLine());
+            int secondtime = int.Parse(Console.ReadLine());
+            int thirdtime = int.Parse(Console.ReadLine());
+            int sum = firstime + secondtime + thirdtime;
+            int minuti = sum / 60;
+            int leftSeconds = sum - (minuti * 60);
+            if (leftSeconds<10)
+            {
+                Console.WriteLine($"{minuti}:0{leftSeconds}");
+            }
+            else
+            {
+                Console.WriteLine($"{minuti}:{leftSeconds}");
+            }
+        }
+    }
+}

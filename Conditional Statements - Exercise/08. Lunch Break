@@ -1,0 +1,37 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace domashno
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+
+            string name = Console.ReadLine();
+            int epizod = int.Parse(Console.ReadLine());
+            int pochivka = int.Parse(Console.ReadLine());
+
+            double obqd = pochivka * 0.125;
+            double otdih = pochivka * 0.25;
+            double ostava = pochivka - (obqd + otdih);
+            double vreme = ostava - epizod;
+            double nujda = epizod -ostava;
+
+            if (epizod<=ostava)
+            {
+                Console.WriteLine($"You have enough time to watch " +
+                    $"{name} and left with {Math.Ceiling(vreme)} minutes free time.");
+            }
+            else 
+            {
+                Console.WriteLine($"You don't have enough time to watch {name}, " +
+                    $"you need {Math.Ceiling(nujda)} more minutes.");
+            }
+            
+        }
+    }
+}

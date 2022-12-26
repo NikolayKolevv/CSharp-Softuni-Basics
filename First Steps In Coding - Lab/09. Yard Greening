@@ -1,0 +1,21 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace lekciq_1
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            double metri = Double.Parse(Console.ReadLine());
+            double cena = metri * 7.61;
+            double discount = cena * 0.18;
+            double cenaa = cena - discount;
+            Console.WriteLine($"The final price is {cenaa} lv.");
+            Console.WriteLine($"The discount is {discount} lv.");
+        }
+    }
+}

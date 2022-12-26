@@ -1,0 +1,21 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace basketball_equipment
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int taksatren = int.Parse(Console.ReadLine());
+            double kecove = taksatren-(taksatren * 0.40);
+            double ekip = kecove-(kecove * 0.20);
+            double topka = ekip * 0.25;
+            double akses = topka * 0.20;
+            Console.WriteLine(taksatren+kecove+topka+akses+ekip);
+        }
+    }
+}

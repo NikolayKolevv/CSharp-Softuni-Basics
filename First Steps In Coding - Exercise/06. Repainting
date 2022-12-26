@@ -1,0 +1,32 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace uprajnenie_1
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            double nailon = 1.50;
+            double boq = 14.50;
+            double razdelitel = 5.00;
+            double torbichki = 0.40;
+            int broinailon = int.Parse(Console.ReadLine());
+            int broiboq = int.Parse(Console.ReadLine());
+            int broirazdelite= int.Parse(Console.ReadLine());
+            int chasove = int.Parse(Console.ReadLine());
+            double vsnailon = broinailon * nailon;
+            double vsboq = broiboq * boq;
+            double vsrazdeliteli = broirazdelite * razdelitel;
+            double cqlaboq = vsboq + (vsboq * 0.10);
+            double cqlnailon = vsnailon + 3.00;
+            double vscena1 = cqlaboq + cqlnailon + vsrazdeliteli + torbichki;
+            double cenamaistor = (vscena1 * 0.3) * chasove;
+            double vscena2 = cenamaistor + vscena1;
+            Console.WriteLine(vscena2);
+        }
+    }
+}

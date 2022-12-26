@@ -1,0 +1,67 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+ 
+namespace Hotel
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            var mesec = Console.ReadLine();
+            var noshtuvki = int.Parse(Console.ReadLine());
+            var studio = 0.0;
+            var apartament = 0.0;
+ 
+            if (mesec == "May" || mesec == "October")
+            {
+                if (noshtuvki > 14)
+                {
+                    studio = 50.00 * 0.7;
+                    apartament = 65.00 * 0.9;
+                }
+                else if (noshtuvki > 7)
+                {
+                    studio = 50.00 * 0.95;
+                    apartament = 65.00;
+                }
+                else
+                {
+                    studio = 50.00;
+                    apartament = 65.00;
+                }
+            }
+ 
+            if (mesec == "June" || mesec == "September")
+            {
+                if (noshtuvki > 14)
+                {
+                    apartament = 68.70 * 0.9;
+                    studio = 75.20 * 0.8;
+                }
+                else
+                {
+                    apartament = 68.70;
+                    studio = 75.20;
+                }
+            }
+            if (mesec == "July" || mesec == "August")
+            {
+                if (noshtuvki>14)
+                {
+                    apartament = 77.00 * 0.9;
+                    studio = 76.00;
+                }
+                else
+                {
+                    studio = 76.00;
+                    apartament = 77.00;
+                }
+            }
+            Console.WriteLine("Apartment: {0:f2} lv.", apartament*noshtuvki);
+            Console.WriteLine("Studio: {0:f2} lv.", studio*noshtuvki);
+        }
+    }
+}

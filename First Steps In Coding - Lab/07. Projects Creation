@@ -1,0 +1,19 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace lekciq_1
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            string name = Console.ReadLine();
+            int proekti = int.Parse(Console.ReadLine());
+            int hours = proekti * 3;
+            Console.WriteLine($"The architect {name} will need {hours} hours to complete {proekti} project/s.");
+        }
+    }
+}

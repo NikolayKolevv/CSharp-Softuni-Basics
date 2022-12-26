@@ -1,0 +1,43 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace lekciq_2
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            string figura = Console.ReadLine();
+            
+            if (figura=="square")
+            {
+                double a = double.Parse(Console.ReadLine());
+                double result = a * a;
+                Console.WriteLine($"{result:f3}");
+            }
+            else if (figura=="rectangle")
+            {
+                double a = double.Parse(Console.ReadLine());
+                double b = double.Parse(Console.ReadLine());
+                double result = a * b;
+                Console.WriteLine($"{result:f3}");
+            }
+            else if (figura=="circle")
+            {
+                double r = double.Parse(Console.ReadLine());
+                double result = Math.PI * r * r;
+                Console.WriteLine($"{result:f3}");
+            }
+            else if (figura=="triangle")
+            {
+                double a = double.Parse(Console.ReadLine());
+                double h = double.Parse(Console.ReadLine());
+                double result = (a * h) / 2;
+                Console.WriteLine($"{result:f3}");
+            }
+        }
+    }
+}

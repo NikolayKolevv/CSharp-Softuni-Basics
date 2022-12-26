@@ -1,0 +1,38 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Lekciq
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            string name = Console.ReadLine();
+            double strartPoints = double.Parse(Console.ReadLine());
+            int reviewersCount = int.Parse(Console.ReadLine());
+            for (int i = 0; i < reviewersCount; i++)
+            {
+                string reviewerName=Console.ReadLine();
+                double reviewePoints = double.Parse(Console.ReadLine());
+                double NewPoints = reviewerName.Length * reviewePoints / 2;
+
+                strartPoints += NewPoints;
+                if (strartPoints>1250.5)
+                {
+                    break;
+                }
+            }
+            if (strartPoints>1250.5)
+            {
+                Console.WriteLine($"Congratulations, {name} got a nominee for leading role with {strartPoints:f1}!");
+            }
+            else
+            {
+                Console.WriteLine($"Sorry, {name} you need {1250.5-strartPoints:f1} more!");
+            }
+        }
+    }
+}

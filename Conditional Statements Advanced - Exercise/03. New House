@@ -1,0 +1,76 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace domashno
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            string flower = Console.ReadLine();
+            int amount = int.Parse(Console.ReadLine());
+            int budjet = int.Parse(Console.ReadLine());
+            double flowerPrice = 0;
+
+            switch (flower)
+            {
+                case "Roses":
+                    flowerPrice = 5;
+                    break;
+                case "Dahlias":
+                    flowerPrice = 3.80;
+                    break;
+                case "Tulips":
+                    flowerPrice = 2.80;
+                    break;
+                case "Narcissus":
+                    flowerPrice = 3;
+                    break;
+                case "Gladiolus":
+                    flowerPrice = 2.50;
+                    break;
+                default:
+                    break;
+            }
+            double sum = flowerPrice * amount;
+            if (flower == "Roses" && amount > 80)
+            {
+                sum *= 0.9;
+            }
+            else if (flower == "Dahlias" && amount > 90)
+            {
+                sum *= 0.85;
+            }
+            else if (flower=="Tulips"&&amount>80)
+            {
+                sum *= 0.85;
+            }
+            else if (flower=="Narcissus"&&amount<120)
+            {
+                sum *= 1.15;
+            }
+            else if (flower=="Gladiolus" && amount<80)
+            {
+                sum *= 1.2;
+            }
+            double ostatuk = budjet - sum;
+            double nedostig = sum - budjet;
+            if (budjet>=sum)
+            {
+                Console.WriteLine($"Hey, you have a great garden with {amount} {flower} and {ostatuk:f2} leva left.");
+            }
+            else if (sum>budjet)
+            {
+                Console.WriteLine($"Not enough money, you need {nedostig:f2} leva more.");
+            }
+
+        }
+    }
+}
+            
+
+
+

@@ -1,0 +1,24 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace fishtank
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int duljina = int.Parse(Console.ReadLine());
+            int shirochina = int.Parse(Console.ReadLine());
+            int visochina = int.Parse(Console.ReadLine());
+            double procen = double.Parse(Console.ReadLine());
+            int obem = duljina * shirochina * visochina;
+            double obemlitri = obem *0.001;
+            double procent = procen / 100;
+            double nujni = obemlitri * (1 - procent);
+            Console.WriteLine(nujni);
+        }
+    }
+}

@@ -1,0 +1,22 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace uprajnenie_1
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            double depozit = double.Parse(Console.ReadLine());
+            int srok=int.Parse(Console.ReadLine());
+            double lihva = double.Parse(Console.ReadLine());
+            double natlihva = depozit * (lihva / 100);
+            double meseclihva = natlihva / 12;
+            double obshtsum = depozit + srok * meseclihva;
+            Console.WriteLine(obshtsum);
+        }
+    }
+}

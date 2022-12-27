@@ -1,0 +1,35 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Izpit
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            double priceShirt = double.Parse(Console.ReadLine());
+            double sumNeed = double.Parse(Console.ReadLine());
+
+            double priceShorts = priceShirt * 0.75;
+            double priceSocks = priceShorts * 0.2;
+            double priceBoots = (priceShirt + priceShorts) * 2;
+            double sum = priceShorts + priceSocks + priceBoots + priceShirt;
+            double discount = sum * 0.15;
+            double sumAfterDiscount = sum - discount;
+            double shortage = sumAfterDiscount - sumNeed;
+            if (sumAfterDiscount > sumNeed)
+            {
+                Console.WriteLine("Yes, he will earn the world-cup replica ball!");
+                Console.WriteLine($"His sum is {sumAfterDiscount:f2} lv.");
+            }
+            else
+            {
+                Console.WriteLine("No, he will not earn the world-cup replica ball.");
+                Console.WriteLine($"He needs {Math.Abs(shortage):f2} lv. more.");
+            }
+        }
+    }
+}

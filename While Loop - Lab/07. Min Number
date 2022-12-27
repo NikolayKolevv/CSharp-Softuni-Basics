@@ -1,0 +1,28 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace While
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            string input = Console.ReadLine();
+            double maxNum = double.MaxValue;
+
+            while (input!="Stop")
+            {
+                double num = double.Parse(input);
+                if (num<maxNum)
+                {
+                    maxNum = num;
+                }
+                 input = Console.ReadLine();
+            }
+            Console.WriteLine(maxNum);
+        }
+    }
+}

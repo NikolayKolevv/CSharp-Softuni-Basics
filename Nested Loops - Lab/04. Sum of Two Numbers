@@ -1,0 +1,40 @@
+using System;
+
+namespace Vlojeni_cikli
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            int start = int.Parse(Console.ReadLine());
+            int end = int.Parse(Console.ReadLine());
+            int magic = int.Parse(Console.ReadLine());
+            int counter = 0;
+            int valid = 0;
+
+            for (int left = start; left <= end; left++)
+            {
+                for (int right = start; right <= end; right++)
+                {
+                    counter++;
+                    int sum = left + right;
+                    if (sum==magic)
+                    {
+                        valid++;
+                        Console.WriteLine($"Combination N:{counter} ({left} + {right} = {sum})");
+                        
+                        break;
+                    }
+                }
+                if (valid == 1)
+                {
+                    break;
+                }
+            }
+            if (valid==0)
+            {
+                Console.WriteLine($"{counter} combinations - neither equals {magic}");
+            }
+        }
+    }
+}

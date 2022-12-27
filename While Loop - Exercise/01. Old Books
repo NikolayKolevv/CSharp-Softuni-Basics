@@ -1,0 +1,42 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace While
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            string searchedBook = Console.ReadLine();
+            int booksearched = 0;
+            bool isbookfound = false;
+
+            while (true)
+            {
+                string input = Console.ReadLine();
+                if (input == "No More Books")
+                {
+                    break;
+                }
+                if (input == searchedBook)
+                {
+                    isbookfound = true;
+                    break;
+                }
+                booksearched++;
+            }
+            if (isbookfound)
+            {
+                Console.WriteLine($"You checked {booksearched} books and found it.");
+            }
+            else
+            {
+                Console.WriteLine("The book you search is not here!");
+                Console.WriteLine($"You checked {booksearched} books.");
+            }
+        }
+    }
+}

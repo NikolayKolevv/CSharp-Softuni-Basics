@@ -1,0 +1,34 @@
+using System;
+using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace For
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            string destination = Console.ReadLine();
+            while (destination!="End")
+            {
+                double need = double.Parse(Console.ReadLine());
+                double save = 0;
+                while (save<need)
+                {
+                    double payment = double.Parse(Console.ReadLine());
+                    save += payment;
+
+
+                }
+                if (save>=need)
+                {
+                    Console.WriteLine($"Going to {destination}!");
+                }
+                destination = Console.ReadLine();
+            }
+        }
+    }
+}

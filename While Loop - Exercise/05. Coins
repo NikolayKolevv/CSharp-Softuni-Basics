@@ -1,0 +1,63 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Coins
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int moneti = 0;
+            double sum = double.Parse(Console.ReadLine());
+            sum = Math.Round(sum * 100);
+
+            while (sum > 0)
+            {
+                if (sum >= 200)
+                {
+                    sum -= 200;
+                    moneti++;
+                }
+                else if (sum >= 100)
+                {
+                    sum -= 100;
+                    moneti++;
+                }
+                else if (sum >= 50)
+                {
+                    sum -= 50;
+                    moneti++;
+                }
+                else if (sum >= 20)
+                {
+                    sum -= 20;
+                    moneti++;
+                }
+                else if (sum >= 10)
+                {
+                    sum -= 10;
+                    moneti++;
+                }
+                else if (sum >= 5)
+                {
+                    sum -= 5;
+                    moneti++;
+                }
+                else if (sum >= 2)
+                {
+                    sum -= 2;
+                    moneti++;
+                }
+                else if (sum >= 1)
+                {
+                    sum -= 1;
+                    moneti++;
+                }
+            }
+            Console.WriteLine(moneti);
+        }
+    }
+}

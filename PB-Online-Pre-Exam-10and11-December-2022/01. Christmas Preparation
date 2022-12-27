@@ -1,0 +1,26 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Izpit
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            double paper = double.Parse(Console.ReadLine());
+            double cloth = double.Parse(Console.ReadLine());
+            double Glue = double.Parse(Console.ReadLine());
+            double percent = double.Parse(Console.ReadLine());
+
+            double pricePaper = paper * 5.80;
+            double priceCloth = cloth * 7.20;
+            double priceGlue = Glue * 1.2;
+            double sum = pricePaper + priceCloth + priceGlue;
+            double sumAfterDiscount = sum - (sum * (percent / 100));
+            Console.WriteLine($"{sumAfterDiscount:f3}");
+        }
+    }
+}

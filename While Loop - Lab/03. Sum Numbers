@@ -1,0 +1,25 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace While
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int goalNumber = int.Parse(Console.ReadLine());
+            int sum = 0;
+            while (sum<goalNumber)
+            {
+                int num = int.Parse(Console.ReadLine());
+                sum += num;
+
+                
+            }
+            Console.WriteLine(sum);
+        }
+    }
+}

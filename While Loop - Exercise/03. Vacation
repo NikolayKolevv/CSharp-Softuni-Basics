@@ -1,0 +1,47 @@
+using System;
+
+namespace WhileUpr
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            double moneyForExcursion = double.Parse(Console.ReadLine());
+            double moneyOnHand = double.Parse(Console.ReadLine());
+
+            int daysForSpending = 0;
+            int daysCount = 0;
+
+            while (moneyOnHand < moneyForExcursion)
+            {
+                string actionType = Console.ReadLine();
+                double amount = double.Parse(Console.ReadLine());
+
+                daysCount++;
+
+                switch (actionType)
+                {
+                    case "spend": 
+                        if (amount > moneyOnHand)
+                        {
+                            moneyOnHand = 0;
+                        }
+                        else
+                        {
+                            moneyOnHand -= amount;
+                        } daysForSpending++; break;
+                    case "save": moneyOnHand += amount; daysForSpending = 0; break;
+                }
+                if (daysForSpending == 5)
+                {
+                    Console.WriteLine("You can't save the money.");
+                    Console.WriteLine(daysCount); break;
+                }
+            }
+            if (moneyOnHand >= moneyForExcursion)
+            {
+                Console.WriteLine($"You saved the money for {daysCount} days.");
+            }
+        }
+    }
+}
